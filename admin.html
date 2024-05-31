@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/admin.css" />
+    <title>Add Listing</title>
+  </head>
+  <body>
+    <div class="demo-page">
+      <main class="demo-page-content">
+        <section>
+          <form onsubmit="addListing()" enctype="multipart/form-data">
+            <div class="href-target" id="input-types"></div>
+            <h1>Exotiq Rentals Administration</h1>
+            <p>Add Latest Arrivals</p>
+
+            <div class="nice-form-group">
+              <label>Name</label>
+              <input
+                required="true"
+                id="name"
+                type="text"
+                placeholder="Model"
+                value=""
+              />
+            </div>
+
+            <div class="nice-form-group">
+              <label>Daily Rental Price</label>
+              <input
+                required="true"
+                id="price_daily"
+                type="number"
+                placeholder="Daily Rental"
+                value=""
+              />
+            </div>
+
+            <div class="nice-form-group">
+              <label>Monthly Rental Price</label>
+              <input
+                required="true"
+                id="price_monthly"
+                type="number"
+                placeholder="Monthly Rental"
+                value=""
+              />
+            </div>
+
+            <div class="nice-form-group">
+              <label>Vehicle Engine</label>
+              <input
+                required="true"
+                id="engine"
+                type="number"
+                placeholder="Vehicle Engine"
+                value=""
+              />
+            </div>
+
+            <div class="nice-form-group">
+              <label>Type of Transmission</label>
+              <input
+                required="true"
+                id="transmission"
+                type="text"
+                placeholder="Transmission"
+              />
+            </div>
+
+            <div class="nice-form-group">
+              <label>Vehicle Capacity</label>
+              <input
+                required="true"
+                id="capacity"
+                type="number"
+                placeholder="Capacity"
+                value=""
+              />
+            </div>
+
+            <div class="nice-form-group">
+              <label>Fuel</label>
+              <input
+                required="true"
+                id="fuel"
+                type="number"
+                placeholder="Fuel Efficiency"
+                value=""
+              />
+            </div>
+            <div class="nice-form-group">
+              <label>Vehicle Image</label>
+              <input
+                required="true"
+                id="img_uri"
+                type="file"
+                placeholder="Image"
+                value=""
+                accept=".jpg, .jpeg, .png"
+              />
+            </div>
+            <details>
+              <summary>
+                <input
+                  class="toggle-code"
+                  type="submit"
+                  value="Add Listing"
+                  style="
+                    border: none;
+                    /* background: transparent; */
+                    color: #fff;
+                    font-weight: 500;
+                    padding: 10px 20px;
+
+                    cursor: pointer;
+                  "
+                  id=""
+                />
+
+                <a
+                  href="/"
+                  style="
+                    text-decoration: none;
+                    background-color: rgb(60, 60, 60);
+                  "
+                  class="toggle-code"
+                  >HomePage</a
+                >
+              </summary>
+            </details>
+          </form>
+        </section>
+      </main>
+    </div>
+    <script>
+      const addListing = async () => {
+        const name = document.getElementById("name").value;
+        const price_daily = document.getElementById("price_daily").value;
+        const price_monthly = document.getElementById("price_monthly").value;
+        const engine = document.getElementById("engine").value;
+        const transmission = document.getElementById("transmission").value;
+        const capacity = document.getElementById("capacity").value;
+        const fuel = document.getElementById("fuel").value;
+        const img_uri = document
+          .getElementById("img_uri")
+          .value.replace("C:\\fakepath\\", "/cars/");
+
+        const response = await fetch("/api/cars/", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name,
+            price_daily,
+            price_monthly,
+            engine,
+            transmission,
+            capacity,
+            fuel,
+            img_uri,
+          }),
+        });
+
+        if (response.ok) {
+          window.location.href = "/";
+        } else {
+          alert("Failed to add listing");
+        }
+      };
+    </script>
+  </body>
+</html>
