@@ -56,3 +56,40 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2024-05-31  8:41:16
+
+--Stored Procedure
+
+CREATE DEFINER=`root`@`localhost` PROCEDURE `usp_car_add_or_edit`(
+IN _id INT,
+IN _name VARCHAR(255),
+IN _price_daily DECIMAL,
+IN _price_monthly DECIMAL,
+IN _engine INT,
+IN _transmission VARCHAR(255),
+IN _capacity DECIMAL,
+IN _fuel INT,
+IN _img_uri VARCHAR(2083)
+
+)
+BEGIN
+	IF _id = 0 THEN
+		INSERT INTO cars(name,price_daily,price_monthly,engine,transmission, capacity,fuel, img_uri)
+		VALUES (_name,_price_daily,_price_monthly,_engine,_transmission, _capacity, _fuel, _img_uri);
+        
+	ELSE
+		UPDATE cars
+        SET name = _name,
+		price_daily = _price_daily,
+        price_monthly = _price_monthly,
+        engine = _engine,
+        transmission = _transmission,
+        capacity = _capacity,
+        fuel = _fuel,
+        img_uri = _img_uri
+        
+        
+        WHERE id = _id;
+	END IF;
+    
+    SELECT ROW_COUNT() AS 'affectedRows';
+END
