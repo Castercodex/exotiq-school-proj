@@ -33,7 +33,7 @@ CREATE TABLE `Cars` (
   `fuel` int DEFAULT NULL,
   `img_uri` varchar(2083) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,7 +42,7 @@ CREATE TABLE `Cars` (
 
 LOCK TABLES `Cars` WRITE;
 /*!40000 ALTER TABLE `Cars` DISABLE KEYS */;
-INSERT INTO `Cars` VALUES (1,'Toyota Corolla',100,2500,169,'Manual',13,1799,'/cars/2016ToyotaCorolla.png'),(2,'Mercedez Benz',200,3000,169,'Manual',13,1799,'/cars/2017Mercedes-Benz-Class.png'),(3,'Lamborghini Aventador',500,10000,500,'Manual',15,2099,'/cars/2018Aventadors.png'),(4,'Ferrari 458',500,10000,509,'Manual',15,2099,'/cars/Ferrari458.png'),(5,'Koenisegg Agera R',700,25000,609,'Manual',16,2099,'/cars/KoenigseggAgeraR1.png'),(6,'Toyota Fortuner',300,2500,169,'Manual',13,1799,'/cars/Toyota-Fortuner.png');
+INSERT INTO `Cars` VALUES (1,'Toyota Corolla',100,2500,169,'Manual',13,1799,'/cars/2016ToyotaCorolla.png'),(2,'Mercedez Benz',200,3000,169,'Manual',13,1799,'/cars/2017Mercedes-Benz-Class.png'),(4,'Ferrari 458',500,10000,509,'Manual',15,2099,'/cars/Ferrari458.png'),(5,'Koenisegg Agera R',700,25000,609,'Manual',16,2099,'/cars/KoenigseggAgeraR1.png'),(6,'Toyota Fortuner',300,2500,169,'Manual',13,1799,'/cars/Toyota-Fortuner.png'),(37,'Peugeot',202,2000,200,'Manual',20,30,'/cars/annie-spratt-6a3nqQ1YwBw-unsplash.jpg');
 /*!40000 ALTER TABLE `Cars` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -55,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-05-31  5:50:36
+-- Dump completed on 2024-05-31  8:41:16
