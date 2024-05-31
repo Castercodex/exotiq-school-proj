@@ -1,0 +1,15 @@
+.authentication-container {
+  height: 100%;
+  .details-fields {
+    border: none;
+    height: 30px;
+    outline: none;
+    background: transparent;
+    border-bottom: 1px solid #181818;
+    transition: 0.1s linear;
+
+    &:focus {
+      border-bottom: 1px solid var(--primary-color);
+    }
+  }
+}

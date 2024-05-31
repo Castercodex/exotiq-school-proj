@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #e7a602;
+  --secondary-color: #181818;
+}
+
+a {
+  text-decoration: none;
+  color: #181818;
+}
+
+body {
+  max-width: 1440px;
+
+  overflow-x: hidden;
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;700&display=swap");
+  font-family: "Poppins", sans-serif;
+  background-color: #f8f8f8;
+}
+.default-layout {
+  padding: 0 300px;
+}
+
+.--flex-start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.--flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.--flex-around {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.--flex-evenly {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.--flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.--flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@import "home";
+@import "authentication";
